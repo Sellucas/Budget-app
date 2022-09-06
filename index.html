@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -21,22 +21,23 @@
         <div class="form-section right">
             <div class="form-info">
                 <div class="inputBox">
-                    <input type="email" required>
+                    <input type="email" id='email' required onchange="validateFields()">
                     <span>Email</span>
                 </div>
                 <div class="inputBox">
-                    <input type="password" required>
+                    <input type="password" id='password' required onchange="validateFields()">
                     <span>Password</span>
                 </div>
             </div>
             <div class="inputBox form-button">
-                <button type="button">Recover Password</button>
-                <button type="button">Log in</button>
+                <button type="button" id="recover-form-btn" disabled="true">Recover Password</button>
+                <button type="button" id="login-form-btn" disabled="true">Log in</button>
                 <div class="separator"></div>
                 <button type="button">Sign up</button>
             </div>
         </div>
     </div>
+    <script src="js/validation.js"></script>
 </body>
 
 </html>
