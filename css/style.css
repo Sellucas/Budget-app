@@ -19,6 +19,10 @@ body {
     flex-direction: column;
 }
 
+.hidden {
+    display: none;
+}
+
 .container-logIn {
     display: flex;
     height: 100%;
@@ -167,4 +171,16 @@ body {
     font-size: 19px;
     padding: 0 15px;
     background: white;
+}
+
+.errorMessage-form {
+    display: none;
+    text-align: center;
+    background-color: lightcoral;
+    color: rgb(80, 9, 9);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    width: 350px;
+    margin: auto;
 }
