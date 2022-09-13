@@ -73,9 +73,9 @@ body {
     border-radius: 0 10px 10px 0;
 }
 
-.form-info {
+/* .form-info {
     margin-bottom: 60px;
-}
+} */
 
 .inputBox {
     position: relative;
@@ -173,8 +173,8 @@ body {
     background: white;
 }
 
-.errorMessage-form {
-    display: none;
+#errorMessage-form {
+    visibility: hidden;
     text-align: center;
     background-color: lightcoral;
     color: rgb(80, 9, 9);

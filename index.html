@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Log In - Budget App</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,32 +15,55 @@
             <img src="form.img.background.png" alt="">
             <div class="welcome-info">
                 <h1>Hi, welcome!</h1>
-                <p><b>Log in</b> or <b>Sign up</b> <br> to  access the app</p>
+                <p><b>Log in</b> or <b>Sign up</b> <br> to access the app</p>
             </div>
         </div>
         <div class="form-section right">
             <div class="form-info">
                 <div class="inputBox">
-                    <input type="email" id='email' required onchange="validateFields()">
+                    <input type="email" id='email' required onchange="onChangeEmail()">
                     <span>Email</span>
                 </div>
                 <div class="inputBox">
-                    <input type="password" id='password' required onchange="validateFields()">
+                    <input type="password" id='password' required onchange="onChangePassword()">
                     <span>Password</span>
                 </div>
-                <div class="errorMessage-form">
+                <div id="errorMessage-form">
                     <p><b>Invalid</b> email/password, please try again!</p>
                 </div>
             </div>
             <div class="inputBox form-button">
                 <button type="button" id="recover-form-btn" disabled="true">Recover Password</button>
-                <button type="button" id="login-form-btn" disabled="true">Log in</button>
+                <button type="button" id="login-form-btn" disabled="true" onclick="login()">Log in</button>
                 <div class="separator"></div>
-                <button type="button">Sign up</button>
+                <button type="button" onclick="signup()">Sign up</button>
             </div>
         </div>
     </div>
+
     <script src="js/validation.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAbSJCNN8ckdQfqLlQl9XPLet17iTCN9J0",
+            authDomain: "budget-app-5110b.firebaseapp.com",
+            projectId: "budget-app-5110b",
+            storageBucket: "budget-app-5110b.appspot.com",
+            messagingSenderId: "897003291344",
+            appId: "1:897003291344:web:2c52abd29de14706e954d5"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        console.log('antes');
+        firebase.auth().signInWithEmailAndPassword("lucassellmachado@gmail.com", "123456").then(response => {
+            console.log('sucess', response)
+        }).catch(error => {
+            console.log('error', error)
+        });
+        console.log('depois');
+    </script>
 </body>
 
 </html>
