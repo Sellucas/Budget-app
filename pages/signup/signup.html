@@ -6,10 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Budget App</title>
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 
 <body>
-    <h1>Sign Up</h1>
+    <div class="container">
+        <div class="form-img left">
+            <img src="../../form.img.background.png" alt="">
+            <div class="welcome-info">
+                <h1>Hi, welcome!</h1>
+                <p><b>Log in</b> or <b>Sign up</b> <br> to access the app</p>
+            </div>
+        </div>
+        <div class="form-section right">
+            <div class="form-info">
+                <div class="inputBox">
+                    <input type="email" id='email' required>
+                    <span>Email</span>
+                </div>
+                <div class="inputBox">
+                    <input type="password" id='password' required>
+                    <span>Password</span>
+                </div>
+                <div class="inputBox">
+                    <input type="password" id='password' required>
+                    <span>Confirm Password</span>
+                </div>
+                <div id="errorMessage-form">
+                    <p><b>Invalid</b> email/password, please try again!</p>
+                </div>
+            </div>
+            <div class="inputBox form-button">
+                <button type="button" id="singup-form-btn" disabled="true" onclick="signup()">Sign up</button>
+                <div class="separator"></div>
+                <button type="button">Sign up</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

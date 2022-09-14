@@ -17,7 +17,26 @@ function onChangePassword() {
 };
 
 function login() {
-    window.location.href = "pages/home/home.html";
+    showLoading();
+    firebase.auth().signInWithEmailAndPassword(form.email().value, form.password().value
+    ).then(() => {
+        hideLoading();
+        window.location.href = "pages/home/home.html";
+    }).catch(() => {
+        hideLoading();
+        form.errorMessage().style.visibility = "visible"
+    });
+};
+
+function recoverPassword() {
+    showLoading();
+    firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {
+        hideLoading();
+        alert('Email successfully sent!')
+    }).catch(() => {
+        hideLoading();
+        form.errorMessage().style.visibility = "visible";
+    });
 };
 
 function signup() {

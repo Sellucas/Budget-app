@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container-logIn">
+    <div class="container">
         <div class="form-img left">
             <img src="form.img.background.png" alt="">
             <div class="welcome-info">
@@ -33,7 +33,8 @@
                 </div>
             </div>
             <div class="inputBox form-button">
-                <button type="button" id="recover-form-btn" disabled="true">Recover Password</button>
+                <button type="button" id="recover-form-btn" disabled="true" onclick="recoverPassword()">Recover
+                    Password</button>
                 <button type="button" id="login-form-btn" disabled="true" onclick="login()">Log in</button>
                 <div class="separator"></div>
                 <button type="button" onclick="signup()">Sign up</button>
@@ -43,6 +44,8 @@
 
     <script src="js/validation.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/loading.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-auth-compat.js"></script>
     <script>
@@ -55,14 +58,6 @@
             appId: "1:897003291344:web:2c52abd29de14706e954d5"
         };
         firebase.initializeApp(firebaseConfig);
-
-        console.log('antes');
-        firebase.auth().signInWithEmailAndPassword("lucassellmachado@gmail.com", "123456").then(response => {
-            console.log('sucess', response)
-        }).catch(error => {
-            console.log('error', error)
-        });
-        console.log('depois');
     </script>
 </body>
 
