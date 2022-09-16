@@ -6,6 +6,12 @@ const form = {
     loginButton: () => document.querySelector('#login-form-btn')
 };
 
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        window.location.href = "pages/home/home.html"
+    }
+});
+
 function onChangeEmail() {
     toggleButtonsDisable();
     toggleEmailError();
