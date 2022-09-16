@@ -1,0 +1,51 @@
+@import url('http://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.separator {
+    height: 1px;
+    width: 100%;
+    margin: 35px 0 35px 0;
+    background-color: #a8a8a8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separator::before {
+    content: "or";
+    color: #a8a8a8;
+    font-size: 19px;
+    padding: 0 15px;
+    background: white;
+}
+
+#errorMessage-form {
+    visibility: hidden;
+    text-align: center;
+    background-color: lightcoral;
+    color: rgb(80, 9, 9);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    width: 350px;
+    margin: auto;
+}
+
+.loading {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+}
