@@ -76,4 +76,4 @@ function isFormValid() {
     }
 
     return true;
-}
+};
