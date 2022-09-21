@@ -24,7 +24,7 @@
     <title>Budget App</title>
 
     <link rel="stylesheet" href="../../css/global.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="incomes.css">
 </head>
 
 <body id="body-pd">
@@ -37,9 +37,9 @@
             <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
                         class="nav_logo-name">BudgetApp</span> </a>
                 <div class="nav_list">
-                    <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
+                    <a href="../home/home.html" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
                         <span class="nav_name">Dashboard</span> </a>
-                    <a href="../incomes/incomes.html" class="nav_link"> <i class='bx bx-line-chart nav_icon'></i> <span
+                    <a href="#" class="nav_link"> <i class='bx bx-line-chart nav_icon'></i> <span
                             class="nav_name">Incomes</span> </a>
                     <a href="#" class="nav_link"> <i class='bx bxs-badge-dollar nav_icon'></i> <span
                             class="nav_name">Expenses</span> </a>
@@ -56,65 +56,66 @@
     <!--Container Main start-->
     <main class="bg-light">
         <div class="main-content height-100">
-            <h2>Dashboard</h2>
+            <h2>Incomes</h2>
             <div class="container">
-                <div class="row">
-                    <div class="general-info current col">
-                        <div class="row">
-                            <div class="general-current col-sm-8">
-                                <h5>Current Balance</h5>
-                                <p class="general-value current-value">R$ 11,887.00</p>
-                            </div>
-                            <div class="general-info-icon col-sm-4">
-                                <i class='bx bx-wallet info_icon' style="background-color: #0B66AA;"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="general-info incomes col">
-                        <div class="row">
-                            <div class="general-incomes col-sm-8">
-                                <h5>Incomes</h5>
-                                <p class="general-value incomes-value">R$ 0.00</p>
-                            </div>
-                            <div class="general-info-icon col-sm-4">
-                                <i class='bx bx-line-chart info_icon' style="background-color: #5A8C35;"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="general-info expenses col">
-                        <div class="row">
-                            <div class="general-expenses col-sm-8">
-                                <h5>Expenses</h5>
-                                <p class="general-value expenses-value">R$ 0.00</p>
-                            </div>
-                            <div class="general-info-icon col-sm-4">
-                                <i class='bx bxs-badge-dollar info_icon' style="background-color: #c4453a;"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="charts-info current col">
-                        <h3>Current Balance</h3>
-                        <div class="chart-box">
-                            Graphic
-                        </div>
-                    </div>
-                    <div class="charts-info current col">
-                        <h3>Current Balance</h3>
-                        <div class="chart-box">
-                            Graphic
-                        </div>
-                    </div>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Status</td>
+                            <td>Date</td>
+                            <td>Description</td>
+                            <td>Amount</td>
+                            <td>Actions</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
     <!--Container Main end-->
 
     <button class="fag"><i class='bx bxs-plus-circle'></i></button>
+    <div id="modal-window" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>New Transaction</h4>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>Choose...</option>
+                            <option value="1">Income</option>
+                            <option value="2">Expense</option>
+                        </select>
+                    </div>
+                    <p><input type="number" /></p>
+                    <p><input type="date"></p>
+                    <p><input type="text" placeholder="Description"></p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Received</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Wasn't received</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app-compat.js"></script>
@@ -122,6 +123,7 @@
     <script src="../../firebase-init.js"></script>
     <script src="../../menu.js"></script>
     <script src="../../auth-guard.js"></script>
+    <script src="../../transaction.js"></script>
 </body>
 
 </html>
