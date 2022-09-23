@@ -10,3 +10,7 @@ document.querySelector('#targetPrice').addEventListener('change', (e) => {
         e.target.value = formatter.format(e.target.value);
     }
 })
+
+function closeModal() {
+    $('#transactionModal').modal('hide');
+};

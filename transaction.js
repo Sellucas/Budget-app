@@ -25,6 +25,6 @@ document.querySelector('.submit').addEventListener('click', (e) => {
         `
         list.appendChild(row);
         selectedRow = null;
-        
+        closeModal();
     }
 })
