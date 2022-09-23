@@ -69,49 +69,66 @@
                         </tr>
                     </thead>
                     <tbody id="tbody">
-
+                        <tr>
+                            <td><i class='bx bxs-check-circle'></i></td>
+                            <td>24/03/2022</td>
+                            <td>Wage</td>
+                            <td>$3,000.00</td>
+                            <td><i class='bx bx-pencil'></i> <i class='bx bx-trash'></i></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </main>
-    <!--Container Main end-->
 
-    <button class="fag"><i class='bx bxs-plus-circle'></i></button>
-    <div id="modal-window" class="modal">
+    <!-- Modal toggler -->
+    <button type="button" data-bs-toggle="modal" data-bs-target="#transactionModal" class="fag">
+        <i class='bx bxs-plus-circle'></i>
+    </button>
+    <!-- Modal Window -->
+    <div class="modal fade" id="transactionModal" tabindex="-1" aria-labelledby="transactionModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4>New Transaction</h4>
+                    <h4 class="modal-title" id="transactionModalLabel">New Transaction</h4>
                     <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body w-75 container">
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        <div class="input-group-prepend w-25">
+                            <label class="input-group-text" for="inputGroupSelect01">Type</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
-                            <option selected>Choose...</option>
+                        <select class="custom-select w-75" id="inputGroupSelect01">
+                            <option selected>Select type</option>
                             <option value="1">Income</option>
                             <option value="2">Expense</option>
                         </select>
                     </div>
-                    <p><input type="number" /></p>
-                    <p><input type="date"></p>
-                    <p><input type="text" placeholder="Description"></p>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                            value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Received</label>
+                    <div class="currency-input">
+                        <input type="text" id="targetPrice" class="w-100" placeholder="Set Target Price" />
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
-                        <label class="form-check-label" for="inlineRadio2">Wasn't received</label>
+                    <p><input id="dateTransaction" type="date" class="w-100" /></p>
+                    <p><input id="descriptionTransaction" type="text" placeholder="Description" class="w-100"></p>
+                    <div class="d-flex w-100">
+                        <span id="status-title">Status:</span>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label hovertext" data-hover="It was paid or Received"
+                                for="inlineRadio1"><i class='bx bxs-check-circle'></i></label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="option2">
+                            <label class="form-check-label hovertext" data-hover="Not paid or Wasn't received"
+                                for="inlineRadio2"><i class='bx bxs-x-circle'></i></label>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit">Submit</button>
+                    <input id="submit" type="submit" class="submit" value="Submit"></input>
                 </div>
             </div>
         </div>
@@ -124,6 +141,7 @@
     <script src="../../menu.js"></script>
     <script src="../../auth-guard.js"></script>
     <script src="../../transaction.js"></script>
+    <script src="../../modal.js"></script>
 </body>
 
 </html>

@@ -9,6 +9,9 @@
     --first-color-light: #AFA5D9;
     --second-color-light: #888888;
     --white-color: #F7F6FB;
+    --blue-color: #0B66AA;
+    --green-color: #5A8C35;
+    --red-color: #c4453a;
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
     --z-fixed: 100;
@@ -79,6 +82,7 @@ a {
     bottom: 32px;
     right: 32px;
     border: none;
+    outline: none
 }
 
 .fag i {
@@ -87,7 +91,13 @@ a {
 }
 
 .fag i:hover {
-    color: #2936ad;
+    color: #030f7c;
+}
+
+.fag:active,
+.fag:focus {
+    border: none;
+    outline: none
 }
 
 /* Menu settings */
@@ -251,4 +261,41 @@ a {
 .main-content {
     width: 80%;
     margin: auto;
+}
+
+.hovertext {
+    position: relative;
+}
+
+.hovertext:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    width: 140px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    transition: opacity 1s ease-in-out;
+
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 110%;
+}
+
+.hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal,
+.fade {
+    height: 100%;
+    width: 100%;
+}
+
+.bx-pencil {
+    padding-right: 10px;
 }
