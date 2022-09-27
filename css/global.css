@@ -299,3 +299,10 @@ a {
 .bx-pencil {
     padding-right: 10px;
 }
+
+tbody tr.expense td:nth-child(4) {
+    color: var(--red-color);
+}
+tbody tr.income td:nth-child(4) {
+    color: var(--green-color);
+}
