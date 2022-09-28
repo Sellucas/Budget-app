@@ -298,6 +298,7 @@ a {
 
 .bx-pencil {
     padding-right: 10px;
+    cursor: pointer;
 }
 
 tbody tr.expense td:nth-child(4) {
