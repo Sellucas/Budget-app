@@ -19,7 +19,7 @@ function submitTransaction() {
             closeModal();
         })
         .catch(() => {
-            alert('Error sending transaction')
+            alert('Send transaction Error')
         })
 }
 
