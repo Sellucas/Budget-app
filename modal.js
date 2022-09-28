@@ -117,38 +117,6 @@ function isFormValid() {
     return true
 }
 
-/* var selectedRow = null;
-
-document.querySelector('.submit').addEventListener('click', (e) => {
-    e.preventDefault();
-
-    //Get All Form Values
-    const valueTransaction = document.querySelector('#valueTransaction').value,
-        dateTransaction = document.querySelector('#dateTransaction').value,
-        descriptionTransaction = document.querySelector('#descriptionTransaction').value,
-        typeTransaction = document.querySelector('#inputGroupSelect01').value,
-        statusTransaction = checkedRadio.value;
-
-    //Validate 
-    if (valueTransaction == '' || dateTransaction == '' || descriptionTransaction == '' || typeTransaction == '0') {
-        alert('Please, fill in all data!')
-    } else if (selectedRow == null) {
-        const list = document.querySelector('#tbody'),
-            row = document.createElement('tr');
-
-        row.innerHTML = `
-            <td><i class='bx bxs-check-circle'></i></td>
-            <td>${dateTransaction}</td>
-            <td>${descriptionTransaction}</td>
-            <td>${valueTransaction}</td>
-            <td><i class='bx bx-pencil'></i> <i class='bx bx-trash'></i></td>
-        `
-        list.appendChild(row);
-        selectedRow = null;
-        closeModal();
-    }
-}); */
-
 function closeModal() {
     window.location.reload(true)
 };
