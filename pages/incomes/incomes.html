@@ -94,47 +94,51 @@
                         <div class="input-group-prepend w-25">
                             <label class="input-group-text" for="inputGroupSelect01">Type</label>
                         </div>
-                        <select class="custom-select w-75" id="inputGroupSelect01">
-                            <option value="0" selected>Select type</option>
-                            <option value="1">Income</option>
-                            <option value="2">Expense</option>
+                        <select class="custom-select w-75" id="typeSelect" onchange="onChangeType()">
+                            <option value="" selected>Select type</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
                         </select>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend w-25">
                             <label class="input-group-text" for="inputGroupSelect02">Currency</label>
                         </div>
-                        <select class="custom-select w-75" id="inputGroupSelect02">
-                            <option value="0" selected>Select currency</option>
-                            <option value="1">BRL</option>
-                            <option value="2">USD</option>
-                            <option value="3">EUR</option>
-                            <option value="4">GBP</option>
+                        <select class="custom-select w-75" id="currencySelect" onchange="onChangeCurrency()">
+                            <option value="" selected>Select currency</option>
+                            <option value="BRL">BRL</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
                         </select>
                     </div>
                     <div class="currency-input">
-                        <input type="text" id="targetPrice" class="w-100" placeholder="Set Target Price" />
+                        <input type="text" id="valueTransaction" class="w-100" placeholder="Set Target Price"
+                            onchange="onChangeValue()" disabled=""/>
                     </div>
-                    <p><input id="dateTransaction" type="date" class="w-100" /></p>
-                    <p><input id="descriptionTransaction" type="text" placeholder="Description" class="w-100"></p>
+                    <p><input id="dateTransaction" type="date" class="w-100" onchange="onChangeDate()" /></p>
+                    <p><input id="descriptionTransaction" type="text" placeholder="Description" class="w-100"
+                            onchange="onChangeDescription()"></p>
                     <div class="d-flex w-100">
                         <span id="status-title">Status:</span>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                value="true" checked>
+                            <input class="form-check-input" type="radio" name="status" id="checkStatusTrue" checked>
                             <label class="form-check-label hovertext" data-hover="It was paid or Received"
-                                for="inlineRadio1"><i class='bx bxs-check-circle'></i></label>
+                                for="checkStatusTrue"><i class='bx bxs-check-circle'></i></label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                value="false">
+                            <input class="form-check-input" type="radio" name="status" id="checkStatusFalse">
                             <label class="form-check-label hovertext" data-hover="Not paid or Wasn't received"
-                                for="inlineRadio2"><i class='bx bxs-x-circle'></i></label>
+                                for="checkStatusFalse"><i class='bx bxs-x-circle'></i></label>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <input id="submit" type="submit" class="submit" value="Submit"></input>
+                    <div id="errorMessage-form" class="text-wrap">
+                        <p><b>Invalid</b> Please fill in all data</p>
+                    </div>
+                    <input id="submit" type="submit" class="submit" value="Submit" disabled
+                        onclick="submitTransaction()"></input>
                 </div>
             </div>
         </div>
