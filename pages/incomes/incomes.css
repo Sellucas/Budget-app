@@ -16,6 +16,9 @@ h2 {
 table {
     width: 80%;
     float: left;
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
 }
 
 td {
@@ -25,11 +28,16 @@ td {
 
 thead {
     background-color: #eceff3;
+    font-weight: bold;
 }
 
 td:nth-child(1),
 td:nth-child(5) {
     text-align: center;
+}
+
+tr td:nth-child(4) {
+    font-weight: bold;
 }
 
 .incomes td:nth-child(4) {
