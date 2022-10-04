@@ -7,13 +7,6 @@ body {
     transition: .5s
 }
 
-.general-info {
-    border: 1px solid lightgray;
-    border-radius: 20px;
-    box-shadow: 0px 5px #88888846;
-    padding: 10px;
-}
-
 .general-info.incomes {
     margin: 0 20px 0 20px;
 }
@@ -24,32 +17,10 @@ h2 {
     padding: 2rem 0 1.5rem 0;
 }
 
-h5 {
-    color: var(--second-color-light);
-    font-size: 1.1rem;
-    font-weight: 100;
-    padding: 0.8rem 0;
-}
-
-.general-value {
-    color: black;
-    font-size: 1.4rem;
-    margin-top: -1rem;
-    font-weight: 600;
-}
-
 .general-info-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.info_icon {
-    font-size: 2rem;
-    color: white;
-    font-weight: 100;
-    padding: 10px;
-    border-radius: 50%;
 }
 
 .charts-info {

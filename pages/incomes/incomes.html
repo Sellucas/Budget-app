@@ -39,12 +39,12 @@
                 <div class="nav_list">
                     <a href="../home/home.html" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
                         <span class="nav_name">Dashboard</span> </a>
-                    <a href="#" class="nav_link" class="nav_link active"> <i class='bx bx-line-chart nav_icon'></i> <span
-                            class="nav_name">Incomes</span> </a>
-                    <a href="#" class="nav_link" class="nav_link active"> <i class='bx bxs-badge-dollar nav_icon'></i> <span
-                            class="nav_name">Expenses</span> </a>
-                    <a href="#" class="nav_link" class="nav_link active"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span
-                            class="nav_name">Balance</span> </a>
+                    <a href="#" class="nav_link" class="nav_link active"> <i class='bx bx-line-chart nav_icon'></i>
+                        <span class="nav_name">Incomes</span> </a>
+                    <a href="#" class="nav_link" class="nav_link active"> <i class='bx bxs-badge-dollar nav_icon'></i>
+                        <span class="nav_name">Expenses</span> </a>
+                    <a href="#" class="nav_link" class="nav_link active"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                        <span class="nav_name">Balance</span> </a>
                     <a href="#" class="nav_link" class="nav_link active"> <i class='bx bx-cog nav_icon'></i> <span
                             class="nav_name">Settings</span> </a>
                 </div>
@@ -54,9 +54,9 @@
         </nav>
     </div>
     <!--Container Main start-->
-    <main class="bg-light">
-        <div class="main-content height-100">
-            <h2>Incomes</h2>
+    <main class="container row main-content">
+        <h2>Incomes</h2>
+        <div class="col-9">
             <div class="container">
                 <table>
                     <thead>
@@ -72,6 +72,33 @@
                         <!-- List -->
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="col">
+                <div class="general-info current col">
+                    <div class="row">
+                        <div class="general-current col-sm-8">
+                            <h5>Received Incomes</h5>
+                            <p class="general-value current-value">R$ 11,887.00</p>
+                        </div>
+                        <div class="general-info-icon col-sm-4">
+                            <i class='bx bxs-check-circle info_icon'></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="general-info current col">
+                    <div class="row">
+                        <div class="general-current col-sm-8">
+                            <h5>Wasn't Received</h5>
+                            <p class="general-value current-value">R$ 11,887.00</p>
+                        </div>
+                        <div class="general-info-icon col-sm-4">
+                            <i class='bx bxs-x-circle info_icon'></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -114,7 +141,7 @@
                     </div>
                     <div class="currency-input">
                         <input type="text" id="valueTransaction" class="w-100" placeholder="Set Target Price"
-                            onchange="onChangeValue()" disabled=""/>
+                            onchange="onChangeValue()" disabled="" />
                     </div>
                     <p><input id="dateTransaction" type="date" class="w-100" onchange="onChangeDate()" /></p>
                     <p><input id="descriptionTransaction" type="text" placeholder="Description" class="w-100"
