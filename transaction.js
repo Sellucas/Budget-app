@@ -11,7 +11,10 @@ function findTransactions(user) {
         .orderBy('date', 'desc')
         .get()
         .then(snapshot => {
-            const transactions = snapshot.docs.map(doc => doc.data());
+            const transactions = snapshot.docs.map(doc => ({
+                ...doc.data(),
+                uid: doc.id
+            }));
             addTransactionToScreen(transactions);
         })
         .catch(error => {
@@ -24,6 +27,7 @@ function addTransactionToScreen(transactions) {
     const list = document.querySelector('#tbody');
 
     transactions.forEach(transaction => {
+        console.log(transaction)
         const row = document.createElement('tr');
         row.classList.add(transaction.type);
 
@@ -50,6 +54,9 @@ function addTransactionToScreen(transactions) {
         const actions = document.createElement('td')
         actions.innerHTML = `<i class='bx bx-pencil'></i> <i class='bx bx-trash'></i>`
         row.appendChild(actions)
+        actions.addEventListener('click', () => {
+            actionsModal();
+        })
 
         list.appendChild(row)
     })
@@ -61,4 +68,10 @@ function formatDate(date) {
 
 function formatMoney(money) {
     return `${money.value}`
+}
+
+function actionsModal() {
+    let el = document.getElementById('transactionModal');
+    let myModal = new bootstrap.Modal(el);
+    myModal.show();
 }
