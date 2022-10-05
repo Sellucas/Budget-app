@@ -1,18 +1,14 @@
-const ctx = document.getElementById('myChart');
-const myChart = new Chart(ctx, {
-    type: 'doughnut',
+// BarChart - Incomes & Expenses
+const bar = document.getElementById('barChart');
+const barChart = new Chart(bar, {
+    type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Icomes', 'Expenses'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [21000, 12000],
             backgroundColor: [
-                'rgba(255, 99, 132)',
-                'rgba(54, 162, 235)',
-                'rgba(255, 206, 86)',
-                'rgba(75, 192, 192)',
-                'rgba(153, 102, 255)',
-                'rgba(255, 159, 64)'
+                'rgb(90, 140, 53)',
+                'rgb(196, 69, 58)'
             ]
 
         }]
@@ -23,5 +19,39 @@ const myChart = new Chart(ctx, {
                 beginAtZero: true
             }
         }
+    }
+});
+
+// DoughnutChart - Incomes Status
+const doughnut = document.getElementById('doughnutChart');
+const doughnutChart = new Chart(doughnut, {
+    type: 'doughnut',
+    data: {
+        labels: ['Received', 'Wasn\'t received'],
+        datasets: [{
+            data: [21000, 12000],
+            backgroundColor: [
+                'rgb(90, 140, 53)',
+                'rgb(196, 69, 58)'
+            ]
+
+        }]
+    }
+});
+
+// DoughnutChart - Expenses Status
+const pie = document.getElementById('pieChart');
+const pieChart = new Chart(pie, {
+    type: 'pie',
+    data: {
+        labels: ['It was paid', 'Not paid'],
+        datasets: [{
+            data: [21000, 12000],
+            backgroundColor: [
+                'rgb(90, 140, 53)',
+                'rgb(196, 69, 58)'
+            ]
+
+        }]
     }
 });
