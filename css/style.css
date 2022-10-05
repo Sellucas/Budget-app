@@ -10,10 +10,6 @@ body {
     flex-direction: column;
 }
 
-.hidden {
-    display: none;
-}
-
 .container {    
     display: flex;
     height: 100%;

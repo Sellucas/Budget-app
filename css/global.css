@@ -33,6 +33,10 @@ a {
     text-decoration: none
 }
 
+.hidden {
+    display: none;
+}
+
 .separator {
     height: 1px;
     width: 100%;
@@ -224,10 +228,10 @@ a {
 }
 
 @media screen and (min-width: 768px) {
-    body {
+    /* body {
         margin: calc(var(--header-height) + 1rem) 0 0 0;
         padding-left: calc(var(--nav-width) + 2rem)
-    }
+    } */
 
     .header {
         height: calc(var(--header-height) + 1rem);
