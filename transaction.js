@@ -27,7 +27,6 @@ function addTransactionToScreen(transactions) {
     const list = document.querySelector('#tbody');
 
     transactions.forEach(transaction => {
-        console.log(transaction)
         const row = document.createElement('tr');
         row.classList.add(transaction.type);
 
